@@ -7,25 +7,26 @@ import { store } from './store';
 
 export const PackingList = () => {
   return (
-      <Frame>
-        <header>
-          <h1>Packing List</h1>
-        </header>
-        <NewItem />
-        <section className="flex flex-col gap-8 md:flex-row">
-          <ItemList title="Unpacked Items" packed={false} />
-          <ItemList title="Packed Items" packed={true} />
-        </section>
-        <MarkAllAsUnpacked />
-      </Frame>
+    <Frame>
+      <header>
+        <h1>Packing List</h1>
+      </header>
+      <NewItem />
+      <section className="flex flex-col gap-8 md:flex-row">
+        <ItemList title="Unpacked Items" packed={false} />
+        <ItemList title="Packed Items" packed={true} />
+      </section>
+      <MarkAllAsUnpacked />
+    </Frame>
   );
 };
 
-
 const App = () => {
-  return <Provider store={store}>
-    <PackingList />
-  </Provider>;
+  return (
+    <Provider store={store}>
+      <PackingList />
+    </Provider>
+  );
 };
 
 export default App;
