@@ -17,7 +17,7 @@ it('renders the Packing List application', () => {
   render(<PackingList />);
 });
 
-it.only('has the correct title', async () => {
+it('has the correct title', async () => {
   render(
     <Provider store={createStore()}>
       <PackingList />{' '}
