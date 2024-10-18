@@ -6,7 +6,12 @@ expect.extend(toHaveNoViolations);
 
 it('should demonstrate this matcher`s usage', async () => {
   const { container } = render(<ObstacleCourse />);
-  const results = await axe(container);
+  const results = await axe(container, {
+    runOnly: {
+      type: 'tag',
+      values: ['wcag2a', 'wcag2aa', 'wcag21aa', 'best-practice']
+    }
+  });
 
   expect(results).toHaveNoViolations();
 });
