@@ -4,7 +4,7 @@ import TimeZone from '.';
 
 beforeEach(() => {
   vi.useFakeTimers();
-  vi.setSystemTime(Date.now());
+  vi.setSystemTime(new Date('2024-10-01T12:00:00Z').getTime());
 });
 
 afterEach(() => {
