@@ -5,8 +5,9 @@ import MarkAllAsUnpacked from './mark-all-as-unpacked';
 import NewItem from './new-item';
 import { store } from './store';
 
-export const PackingList = () => {
+const PackingList = () => {
   return (
+    <Provider store={store}>
       <Frame>
         <header>
           <h1>Packing List</h1>
@@ -18,14 +19,8 @@ export const PackingList = () => {
         </section>
         <MarkAllAsUnpacked />
       </Frame>
+    </Provider>
   );
 };
 
-
-const App = () => {
-  return <Provider store={store}>
-    <PackingList />
-  </Provider>;
-};
-
-export default App;
+export default PackingList;

@@ -1,32 +1,12 @@
 import { render, screen } from 'test/utilities';
-import { PackingList } from '.';
-import { createStore } from '../packing-list-revisited/store';
-import { Provider } from 'react-redux';
-import { ReactElement } from 'react';
-
-const renderWithProvuder = (ui: ReactElement) => {
-  const store = createStore();
-  return render(ui, {
-    wrapper: ({ children }) => {
-      return <Provider store={store}>{children}</Provider>;
-    },
-  });
-}
+import PackingList from '.';
 
 it('renders the Packing List application', () => {
   render(<PackingList />);
 });
 
-it.only('has the correct title', async () => {
-  render(
-    <Provider store={createStore()}>
-      <PackingList />{' '}
-    </Provider>, {
-      wrapper: ({ children }) => {
-        return <Provider store={createStore()}>{children}</Provider>;
-      },
-    }
-  );
+it('has the correct title', async () => {
+  render(<PackingList />);
   screen.getByText('Packing List');
 });
 
