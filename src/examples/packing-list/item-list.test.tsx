@@ -5,7 +5,7 @@ import ItemList from './item-list';
 import { store } from './store';
 import { add } from './store/items-slice';
 
-it.todo('should render', async () => {
+it('should render', async () => {
   render(<ItemList title="Unpacked Items" packed={false} />, {
     wrapper: ({ children }: PropsWithChildren) => (
       <Provider store={store}>{children}</Provider>
@@ -13,7 +13,7 @@ it.todo('should render', async () => {
   });
 });
 
-it.todo('should display items', () => {
+it('should display items', () => {
   store.dispatch(add({ name: 'Lucky beanie' }));
 
   render(<ItemList title="Unpacked Items" packed={false} />, {
