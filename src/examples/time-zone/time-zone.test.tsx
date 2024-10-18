@@ -4,7 +4,7 @@ import TimeZone from '.';
 
 beforeEach(() => {
   vi.useFakeTimers();
-  vi.setSystemTime(35235235);
+  vi.setSystemTime(Date.now());
 });
 
 afterEach(() => {
